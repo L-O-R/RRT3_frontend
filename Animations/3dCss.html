@@ -7,49 +7,43 @@
     <title>Position: Static</title>
     <style>
         body {
-            font-family: sans-serif;
-            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: lightblue;
-            border: 1px solid blue;
-            margin: 10px;
-            text-align: center;
-            line-height: 100px;
+        section {
+            transition: all 2s ease-in-out;
         }
 
+        section:hover {
 
-        .static-box {
-            position: fixed;
-            z-index: 10000;
-            inset: 40px;
-            /* This is the default, so it's often omitted */
-            /* top: 50px; /* This will have no effect */
+            perspective: 1000px;
         }
 
-        .box1 {
-            z-index: 1;
-        }
-
-        p {
-            height: 200vh;
+        section div {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+            transform: rotateX(25deg) rotateY(-35deg);
+            /* Adding a shadow to enhance the 3D effect */
+            box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 
 <body>
-    <h1>Position: Static</h1>
-    <div class="box box1">Box 1 (Static)</div>
+
     <section>
-        <div class="box static-box">Box 2 (Static)</div>
+        <div class="box static-box">
+            <h2>Box 2</h2>
+        </div>
     </section>
-    <div class="box">Box 3 (Static)</div>
-    <p>These boxes are positioned according to the normal document flow. 'top', 'right', 'bottom', 'left' have no
-        effect
-        here.</p>
+
 </body>
 
 </html>
