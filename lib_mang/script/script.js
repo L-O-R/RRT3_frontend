@@ -48,6 +48,7 @@ function addBookToLibrary(event) {
     year
   );
   // Add the new book to the library
-  myLibrary.addBook(newBook);
+  myLibrary.addBook(newBook, myLibrary);
   console.log(myLibrary);
 }
+myLibrary.displayBooks();
