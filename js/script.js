@@ -1,10 +1,55 @@
-const btn = document.getElementById("btn");
+// Featching wheather Function to caputure the user city input
+let loadingText;
+const weather_container = document.getElementById(
+  "weather_container"
+);
+const fetchWeather = (event) => {
+  event.preventDefault();
+  loadingText = true;
+  const City = document.getElementsByName("City");
+  console.log(City[0].value);
+  fetchWeatherFromApi(City[0].value);
 
-const para = document.getElementsByTagName("p");
-console.log(para);
+  if (loadingText) {
+    weather_container.innerText = "loading....";
+  }
+};
 
-para[0].addEventListener("mouseenter", clickHandler);
+async function fetchWeatherFromApi(City) {
+  const url = `https://open-weather13.p.rapidapi.com/city?city=${City}&lang=EN`;
 
-function clickHandler() {
-  para[0].innerText = "hello from js";
+  const options = {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "Your api key",
+      "x-rapidapi-host": "your host",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    console.log(response);
+    if (!response.ok) {
+      throw new console.error("Failed to fetch details");
+    }
+
+    const result = await response.json();
+    renderData(result);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    loadingText = false;
+  }
+
+  // render wheather data
+}
+
+function renderData(data) {
+  weather_container.innerText = " ";
+  weather_container.innerHTML = " ";
+  weather_container.innerHTML = `
+        <h3>Weather for ${data.name} </h3>
+        <p><strong>Temprature: <strong/> ${data.main.temp}</p>
+          <img src=${data.weather[0].icon} alt = ${data.name} />
+        `;
 }

@@ -8,12 +8,16 @@
 </head>
 
 <body>
-    <button id="btn">Click</button>
+    <section>
+        <form onsubmit="fetchWeather(event)">
+            <input type="text" placeholder="City" name="City" required>
+            <input type="submit" value="Fetch Weather">
+        </form>
+        <div id="weather_container">
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci illo perspiciatis veritatis dolores dicta! Cum
-        quia dolore fugit, quod ut labore mollitia explicabo similique molestias, optio voluptas, ab nulla laboriosam.
-    </p>
+        </div>
 
+    </section>
 
     <script src="script.js"></script>
 </body>
