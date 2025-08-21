@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Playfair";
+  src: url("/public/font/Playfair-VariableFont_opsz\,wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/public/font/Raleway-VariableFont_wght.ttf");
+}
+
+@theme {
+  --font-primary: "Playfair", serif;
+  --font-text: "Raleway", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
