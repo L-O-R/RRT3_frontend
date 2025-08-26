@@ -10,7 +10,7 @@ const Header = () => {
     setOpen(false);
   };
   return (
-    <header className="absolute top-0 w-full">
+    <header className="absolute top-0 w-full z-100">
       <div className="flex justify-between items-center max-w-[90%] border mx-auto">
         <a href="#">
           <img

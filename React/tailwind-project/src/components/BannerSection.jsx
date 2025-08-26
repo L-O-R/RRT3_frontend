@@ -1,8 +1,14 @@
 import React from "react";
 import Hero from "../assets/hero.png";
+import Circle from "./ui/Circle";
 const BannerSection = () => {
   return (
-    <section className="min-h-screen flex items-center mt-20 lg:mt-0">
+    <section className="min-h-screen flex items-center mt-20 lg:mt-0 relative">
+      <Circle
+        className={
+          "w-[18rem] h-[18rem] rounded-full bg-blue-50/80 absolute -top-20 -left-30 -z-0"
+        }
+      />
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
         {/* text content */}
         <div className="flex-1 space-y-4">
