@@ -51,7 +51,7 @@ const KeyFeatures = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className=" shadow-xl !shadow-[#D1D1FF70] py-5 px-6 rounded-xl flex flex-col justify-center items-center gap-6 drop-shadow-2xl">
+            className=" shadow-xl bg-white shadow-[#D1D1FF70] pt-10 pb-5 px-6 rounded-xl flex flex-col justify-center items-center gap-6 drop-shadow-2xl">
             <img src={item.icon} alt={item.heading} />
             <h2 className="text-3xl font-semibold text-[#0004ff] text-center">
               {item.heading}

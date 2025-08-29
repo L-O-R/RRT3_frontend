@@ -32,21 +32,23 @@ const HowitWorks = () => {
       <div className="flex gap-6 justify-center items-center max-w-[90%] mx-auto">
         <div className=" flex-1 space-y-8">
           {content.map((item) => (
-            <div className="flex gap-4 items-start justify-center pr-6 ">
+            <div
+              className="flex gap-4 items-start justify-center pr-6 "
+              key={item.num}>
               <span>{item.num}</span>
               <div>
                 <h3>{item.title}</h3>
                 <p>
                   <strong>Concept:</strong>
                   <br />
-                  <p>{item.concept}</p>
+                  <span>{item.concept}</span>
                 </p>
               </div>
             </div>
           ))}
         </div>
         <div className=" flex-1">
-          <video autoplay muted loop controls>
+          <video autoPlay muted loop controls>
             <source src={vide} type="video/mp4" />
           </video>
         </div>

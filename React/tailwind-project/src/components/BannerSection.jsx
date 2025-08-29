@@ -3,7 +3,7 @@ import Hero from "../assets/hero.png";
 import Circle from "./ui/Circle";
 const BannerSection = () => {
   return (
-    <section className="min-h-screen flex items-center mt-20 lg:mt-0 relative">
+    <section className="min-h-screen flex items-center mt-20 lg:mt-0 relative max-w-[90%] mx-auto">
       <Circle
         className={
           "w-[18rem] h-[18rem] rounded-full bg-blue-50/80 absolute -top-20 -left-30 -z-0"
@@ -38,6 +38,12 @@ const BannerSection = () => {
           />
         </div>
       </div>
+
+      <Circle
+        className={
+          "bg-blue-50/60   w-[35rem] aspect-square rounded-full absolute -bottom-90 -right-20 "
+        }
+      />
     </section>
   );
 };
