@@ -73,6 +73,7 @@ const RapidApi = () => {
           <option value="all">ALL</option>
           <option value="action">Action</option>
         </select>
+        {/* <input onChange={}/> */}
       </div>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-10 min-h-screen">
         {movies &&

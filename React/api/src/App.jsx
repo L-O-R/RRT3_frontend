@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import RapidApi from "./components/RapidApi";
+import Form from "./components/Form";
 const App = () => {
   let [user, setUser] = useState(null);
   let [error, setError] = useState(null);
@@ -71,13 +72,14 @@ const App = () => {
   // console.log(user);
   return (
     <>
-      <h1>Rapid API COmponent</h1>
-      <RapidApi />
+      {/* <h1>Rapid API COmponent</h1> */}
+      {/* <RapidApi /> */}
+      <Form />
       <br />
       <br />
       <br />
       <br />
-      <h1>Welcome{user?.name} </h1>
+      {/* <h1>Welcome{user?.name} </h1> */}
     </>
   );
 };
