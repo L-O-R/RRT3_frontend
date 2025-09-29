@@ -73,8 +73,8 @@ const App = () => {
   return (
     <>
       {/* <h1>Rapid API COmponent</h1> */}
-      {/* <RapidApi /> */}
-      <Form />
+      <RapidApi />
+      {/* <Form /> */}
       <br />
       <br />
       <br />

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 const RapidApi = () => {
   //   loading, error, filters, movies
+
+  const genreSelect = useRef();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,12 +12,16 @@ const RapidApi = () => {
     page: "1",
     quality: "all",
     genre: "all",
-    minimum_rating: "8",
+    minimum_rating: "0",
     query_term: "0",
     sort_by: "date_added",
     order_by: "asc",
     with_rt_ratings: "false",
   });
+
+  // let dummy = { ...filters, genre: "new value" };
+
+  console.log("Filters: ", filters);
 
   const apiConfig = {
     method: "GET",
@@ -48,17 +54,21 @@ const RapidApi = () => {
 
   //  user change filter and recall out api with new data
   const handleFilterChange = (key, value) => {
-    // console.log(e);
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
   };
 
+  //  mounting
   useEffect(() => {
     fetchMovies();
   }, []);
 
   //  updating stage
-  // useEffect(() => {
-  //   fetchMovies();
-  // }, [filters]);
+  useEffect(() => {
+    fetchMovies();
+  }, [filters]);
 
   if (loading) return <h2>LOADING.......</h2>;
 
@@ -68,10 +78,15 @@ const RapidApi = () => {
     <>
       <div className="my-14 px-20">
         <select
-          value={filters.genre}
-          onChange={(event) => handleFilterChange(event)}>
+          ref={genreSelect}
+          onChange={() =>
+            handleFilterChange(
+              "genre",
+              genreSelect.current.value
+            )
+          }>
           <option value="all">ALL</option>
-          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
         </select>
         {/* <input onChange={}/> */}
       </div>
